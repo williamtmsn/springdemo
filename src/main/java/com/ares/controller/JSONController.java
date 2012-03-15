@@ -1,4 +1,4 @@
-package com.common.controller;
+package com.ares.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.common.model.Shop;
+import com.ares.model.Shop;
 
 @Controller
-@RequestMapping("/kfc/brands")
+@RequestMapping("/api/admin/brands")
 public class JSONController {
 
 	@RequestMapping(value="{name}", method = RequestMethod.GET)
@@ -17,7 +17,7 @@ public class JSONController {
 
 		Shop shop = new Shop();
 		shop.setName(name);
-		shop.setStaffName(new String[]{"mkyong1", "mkyong2"});
+		shop.setStaffName(new String[]{"demo1", "demo2"});
 		
 		return shop;
 

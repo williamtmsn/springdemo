@@ -1,5 +1,6 @@
 package com.ares.controller;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,8 @@ import com.ares.model.Shop;
 @Controller
 @RequestMapping("/api/admin/brands")
 public class JSONController {
-
+	protected static Logger logger = Logger.getLogger(JSONController.class.getName());
+	
 	@RequestMapping(value="{name}", method = RequestMethod.GET)
 	public @ResponseBody Shop getShopInJSON(@PathVariable String name) {
 
